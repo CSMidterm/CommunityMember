@@ -10,7 +10,7 @@ Alumnus::Alumnus(void)
 Alumnus::Alumnus(unsigned long int ID, string Fname, string Lname, string Address,
 	unsigned  int Cell, unsigned int YOG,string CJ) : CommunityMember(ID, Fname, Lname, Address, Cell)
 {
-	yog = YOG;
+	YearOfGraduation = YOG;
 	CurrentJob = CJ;
 }
 
@@ -19,9 +19,9 @@ Alumnus::~Alumnus(void)
 {
 }
 
-void Alumnus::setYOG(unsigned int YOG)
+void Alumnus::setYearOfGraduation(unsigned int YOG)
 {
-	yog = YOG;
+	YearOfGraduation = YOG;
 }
 void Alumnus::setCurrentJob(string CJ) {
 	CurrentJob = CJ;
@@ -29,23 +29,30 @@ void Alumnus::setCurrentJob(string CJ) {
 string Alumnus::getCurrentJob() {
 	return CurrentJob;
 }
-unsigned int Alumnus::getYOG()
+unsigned int Alumnus::getYearOfGraduation()
 {
-	return yog;
+	return YearOfGraduation;
 }
 void Alumnus::Alumnus::print()
 {
 	CommunityMember::print();	// prints all 5 data members
-	cout << "Year of graduation : " << yog << endl
+	cout << "Year of graduation : " << YearOfGraduation << endl
 		<< "Current job : " << CurrentJob << endl;
 
 }
 
-int main()
+void Alumnus::setAll(unsigned long int ID, string Fname, string Lname, string Address, unsigned long int Cell, unsigned int YOG, string CJ)
 {
-	CommunityMember c1();
-	c1().setFirstName("Ahmed");
-	c1().getFirstName();
-	c1().print();
+	CommunityMember::setAll(ID, Fname, Lname, Address, Cell);
 
+	YearOfGraduation = YOG;
+	CurrentJob = CJ;
+}
+
+void Alumnus::Alumnus::ReadData() {
+	CommunityMember::ReadData();
+	cout << "enter Year of graduation : ";
+	cin >> YearOfGraduation;
+	cout << "enter Current job : ";
+	cin >> CurrentJob;
 }

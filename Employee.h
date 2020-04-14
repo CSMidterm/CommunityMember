@@ -9,20 +9,20 @@ class Employee : public CommunityMember
 public:
 	Employee();
 	Employee(unsigned long int, string, string, string, unsigned long int,
-		float, string);
+		double);
 	~Employee();
 
-	void setSalary(float);
-	void setDept(string);
+	void setSalary(double);
+	
 
-	float getSalary();
-	string getDept();
+	double getSalary();
+	
 
 	void print();
 	void setAll(unsigned long int, string, string, string, unsigned long int,
-		float, string);
-
+		double);
+	void ReadData();
 protected:
-	float salary;
-	string dept;
+	double salary;
+	
 };

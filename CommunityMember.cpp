@@ -1,78 +1,97 @@
 #include "CommunityMember.h"
+#include <iostream>
 
-CommunityMember::CommunityMember(unsigned long int id, string fn, string ln, string ad, unsigned long int cp)
+using namespace std;
+
+CommunityMember::CommunityMember()
 {
-	ID = id;
-	FirstName = fn;
-	LastName = ln;
-	Address = ad;
-	CellPhone = cp;
 }
 
-void CommunityMember::setID(unsigned long int id)
+CommunityMember::CommunityMember(unsigned long int ID, string Fname, string Lname,
+	string Address, unsigned long int Cell)
 {
-	ID = id;
+	id = ID;
+	fname = Fname;
+	lname = Lname;
+	address = Address;
+	cell = Cell;
 }
 
-void CommunityMember::setFirstName(string fn)
+
+CommunityMember::~CommunityMember(void)
 {
-	FirstName = fn;
 }
 
-void CommunityMember::setLastName(string ln)
+void CommunityMember::setFname(string Fname)
 {
-	LastName = ln;
+	fname = Fname;
+}
+void CommunityMember::setLname(string Lname)
+{
+	lname = Lname;
+}
+void CommunityMember::setID(unsigned long int ID)
+{
+	id = ID;
+}
+void CommunityMember::setAddress(string Address)
+{
+	address = Address;
+}
+void CommunityMember::setCell(unsigned long int Cell)
+{
+	cell = Cell;
 }
 
-void CommunityMember::setAddress(string ad)
+string CommunityMember::getFname()
 {
-	Address = ad;
+	return fname;
 }
-
-void CommunityMember::setCellPhone(unsigned long int cp)
+string CommunityMember::getLname()
 {
-	CellPhone = cp;
+	return lname;
 }
-
 unsigned long int CommunityMember::getID()
 {
-	return ID;
-}
-
-string CommunityMember::getFirstName()
-{
-	return FirstName;
-}
-
-string CommunityMember::getLastName()
-{
-	return LastName;
+	return id;
 }
 
 string CommunityMember::getAddress()
 {
-	return Address;
+	return address;
 }
-
-unsigned long int CommunityMember::getCellPhone()
+unsigned long int CommunityMember::getCell()
 {
-	return CellPhone;
+	return cell;
 }
 
+void CommunityMember::setAll(unsigned long int ID, string Fname, string Lname, string Address, unsigned long int Cell)
+{
+	id = ID;
+	fname = Fname;
+	lname = Lname;
+	address = Address;
+	cell = Cell;
+}
 void CommunityMember::print()
 {
-	cout << "ID: " << getID() << endl
-		<< "First Name: " << getFirstName() << endl
-		<< "Last Name: " << getLastName() << endl
-		<< "Address: " << getAddress() << endl
-		<< "CellPhone: " << getCellPhone() << endl;
+	cout << "ID: " << id << endl
+		<< "First: " << fname << endl
+		<< "Last: " << lname << endl
+		<< "Address: " << address << endl
+		<< "Cell: " << cell << endl;
 }
 
-int main()
+void CommunityMember::ReadData()
 {
-	CommunityMember c1;
-	c1.setFirstName("Ahmed");
-	c1.getFirstName();
-	c1.print();
-
+	cout << "enter ID: ";
+	cin >> id;
+	cout << "enter Frist Name: ";
+	cin >> fname;
+	cout << "enter last name: ";
+	cin >> lname;
+	cout << "enter address: ";
+	cin >> address;
+	cout << "enter cell: ";
+	cin >> cell;
 }

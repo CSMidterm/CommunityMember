@@ -8,10 +8,10 @@ Employee::Employee()
 }
 
 Employee::Employee(unsigned long int ID, string Fname, string Lname, string Address, unsigned long int Cell,
-	float Sal, string Dept)
+	double Sal)
 {
 	CommunityMember::CommunityMember(ID, Fname, Lname, Address, Cell);
-	dept = Dept;
+	
 	salary = Sal;
 }
 
@@ -19,22 +19,15 @@ Employee::~Employee()
 {
 }
 
-void Employee::setDept(string Dept)
-{
-	dept = Dept;
-}
 
-void Employee::setSalary(float Sal)
+
+void Employee::setSalary(double Sal)
 {
 	salary = Sal;
 }
 
-string Employee::getDept()
-{
-	return dept;
-}
 
-float Employee::getSalary()
+double Employee::getSalary()
 {
 	return salary;
 }
@@ -42,16 +35,20 @@ float Employee::getSalary()
 void Employee::Employee::print()
 {
 	Employee::print();	// prints all 5 data members
-	cout << "Department: " << dept << endl
-		<< "Salary: " << salary << endl;
+	cout << "Salary: " << salary << endl;
 
 }
 
 void Employee::Employee::setAll(unsigned long int ID, string Fname, string Lname, string Address, unsigned long int Cell,
-	float Sal, string Dept)
+	double Sal)
 {
 	CommunityMember::setAll(ID, Fname, Lname, Address, Cell);
 
-	dept = Dept;
+	
 	salary = Sal;
 }
+
+void Employee::Employee::ReadData() {
+	CommunityMember::ReadData();
+	cout << "enter Salary: ";
+	cin >> salary;}

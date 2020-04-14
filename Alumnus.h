@@ -11,11 +11,15 @@ public:
 
 	void setCurrentJob(string);
 	string getCurrentJob();
-	void setYOG(unsigned int);
-	unsigned int getYOG();
+	void setYearOfGraduation(unsigned int);
+	unsigned int getYearOfGraduation();
 	void  print();
+
+	void setAll(unsigned long int, string, string, string, unsigned long int,
+		unsigned int, string);
+	void ReadData();
 private:
-	unsigned int yog;
+	unsigned int YearOfGraduation;
 	string CurrentJob;
 };
 
