@@ -104,7 +104,7 @@ int main() {
 			file.close();
 		}
 		else {
-			cout << "error try again ):";
+			cout << "error try again ):\n";
 			goto a;
 		}
 		
