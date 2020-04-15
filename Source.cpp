@@ -105,6 +105,7 @@ int main() {
 		}
 		else {
 			cout << "error try again ):";
+			goto a;
 		}
 		
 
